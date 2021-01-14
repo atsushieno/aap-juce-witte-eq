@@ -1,0 +1,2 @@
+rootProject.name = 'witte_eq'
+include ':app'

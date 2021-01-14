@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This metadata is *manually* created i.e. hack -->
+<plugins>
+  <plugin name="Witte Eq" category="Effect" author="witte"
+          manufacturer="https://github.com/witte/Eq" unique-id="juceaap:2b80db16"
+          library="libjuce_jni.so" entrypoint="GetJuceAAPFactory" assets="">
+    <ports>
+      <port name="1 On" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="1 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
+      <port name="1 Freq" direction="input" default="20.0" maximum="48000.0" content="other"/>
+      <port name="1 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="1 Q" direction="input" default="0.7" minimum="0.1" maximum="10.0" content="other"/>
+
+      <port name="2 On" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="2 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
+      <port name="2 Freq" direction="input" default="200.0" maximum="48000.0" content="other"/>
+      <port name="2 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="2 Q" direction="input" default="1.0" minimum="0.1" maximum="10.0" content="other"/>
+
+      <port name="3 On" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="3 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
+      <port name="3 Freq" direction="input" default="1000.0" maximum="48000.0" content="other"/>
+      <port name="3 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="3 Q" direction="input" default="1.0" minimum="0.1" maximum="10.0" content="other"/>
+
+      <port name="4 On" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="4 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
+      <port name="4 Freq" direction="input" default="5000.0" maximum="48000.0" content="other"/>
+      <port name="4 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="4 Q" direction="input" default="1.0" minimum="0.1" maximum="10.0" content="other"/>
+
+      <port name="5 On" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="5 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
+      <port name="5 Freq" direction="input" default="20000.0" maximum="48000.0" content="other"/>
+      <port name="5 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
+      <port name="5 Q" direction="input" default="0.7" minimum="0.1" maximum="10.0" content="other"/>
+
+      <port direction="output" content="audio" name="Left"/>
+      <port direction="output" content="audio" name="Right"/>
+      <port direction="input" content="audio" name="Left"/>
+      <port direction="input" content="audio" name="Right"/>
+    </ports>
+  </plugin>
+</plugins>

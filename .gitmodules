@@ -1,0 +1,12 @@
+[submodule "external/Eq"]
+	path = external/Eq
+	url = https://github.com/witte/Eq.git
+[submodule "external/aap-juce"]
+	path = external/aap-juce
+	url = https://github.com/atsushieno/aap-juce.git
+[submodule "oboe"]
+	path = external/oboe
+	url = https://github.com/google/oboe.git
+[submodule "external/android-audio-plugin-framework"]
+	path = external/android-audio-plugin-framework
+	url = https://github.com/atsushieno/android-audio-plugin-framework.git
