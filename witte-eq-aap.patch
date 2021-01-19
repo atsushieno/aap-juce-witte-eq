@@ -57,9 +57,3 @@ index b361ca3..04f2d1a 100644
 +        ${cpufeatures_lib}
 +        ${oboe_lib}
 +        )
-diff --git a/JUCE b/JUCE
---- a/JUCE
-+++ b/JUCE
-@@ -1 +1 @@
--Subproject commit 4855f52e4d407dc323a61b054c4c0eadbc836157
-+Subproject commit 4855f52e4d407dc323a61b054c4c0eadbc836157-dirty

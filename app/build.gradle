@@ -18,59 +18,29 @@ android {
         targetSdkVersion 30
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_TOOLCHAIN=clang", "-DANDROID_PLATFORM=android-16", "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti", "-DANDROID_ARM_MODE=arm", "-DANDROID_ARM_NEON=TRUE", "-DCMAKE_CXX_STANDARD=14", "-DCMAKE_CXX_EXTENSIONS=OFF"
+                arguments "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti"
             }
         }
     }
 
-    buildTypes {
-         debug {
-         }
-         release {
-         }
-    }
-
-    flavorDimensions "default"
-    productFlavors {
-        debug_ {
-            externalNativeBuild {
-                cmake {
-                    arguments "-DJUCE_BUILD_CONFIGURATION=DEBUG", "-DCMAKE_CXX_FLAGS_DEBUG=-O0", "-DCMAKE_C_FLAGS_DEBUG=-O0"
-                }
-            }
-            dimension "default"
-       }
-        release_ {
-            externalNativeBuild {
-                cmake {
-                    arguments "-DJUCE_BUILD_CONFIGURATION=RELEASE", "-DCMAKE_CXX_FLAGS_RELEASE=-O3", "-DCMAKE_C_FLAGS_RELEASE=-O3"
-                }
-            }
-            dimension "default"
-       }
-    }
-
     sourceSets {
-        // FIXME: remove the forst emtry; framework should never depend on a derived Application class.
-        //  It should provide ContentProvider via Jetpack App Startup library.
         main.java.srcDirs +=
-            ["../external/Eq/JUCE/modules/juce_core/native/javacore/app",
-             "../external/Eq/JUCE/modules/juce_core/native/javacore/init",
-             "../external/Eq/JUCE/modules/juce_gui_basics/native/javaopt/app"]
+            ["../JUCE/modules/juce_gui_basics/native/javaopt/app"]
         main.res.srcDirs +=
             []
-    }
-
-    repositories {
     }
 
     dependencies {
         implementation "androidx.startup:startup-runtime:1.0.0"
         implementation "org.androidaudioplugin:androidaudioplugin:0.6.3"
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 dependencies {
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.3.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
