@@ -55,5 +55,5 @@ index b361ca3..04f2d1a 100644
 +        ${glesv2}
 +        ${egl}
 +        ${cpufeatures_lib}
-+        ${oboe_lib}
++        #${oboe_lib}
 +        )

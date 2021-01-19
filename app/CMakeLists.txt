@@ -24,12 +24,13 @@ add_definitions(
 #    "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" 
 #    "-DJUCE_APP_VERSION=1.0.0" 
 #    "-DJUCE_APP_VERSION_HEX=0x10000"
+    "-DJUCE_USE_ANDROID_OBOE=0"
     )
 
 # Enable these lines if you use juce_audio_devices API
-set(JUCE_USE_ANDROID_OBOE 1)
+set(JUCE_USE_ANDROID_OBOE 0)
 set(OBOE_DIR "../external/Eq/JUCE/modules/juce_audio_devices/native/oboe")
-add_subdirectory (${OBOE_DIR} ./oboe)
+#add_subdirectory (${OBOE_DIR} ./oboe)
 set(AAP_DIR "${CMAKE_CURRENT_LIST_DIR}/../external/android-audio-plugin-framework")
 
 # libcpufeatures
