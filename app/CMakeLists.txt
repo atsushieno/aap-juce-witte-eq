@@ -28,7 +28,7 @@ add_definitions(
 
 # Enable these lines if you use juce_audio_devices API
 set(JUCE_USE_ANDROID_OBOE 1)
-set(OBOE_DIR "../external/JUCE/modules/juce_audio_devices/native/oboe")
+set(OBOE_DIR "../external/Eq/JUCE/modules/juce_audio_devices/native/oboe")
 add_subdirectory (${OBOE_DIR} ./oboe)
 set(AAP_DIR "${CMAKE_CURRENT_LIST_DIR}/../external/android-audio-plugin-framework")
 
@@ -42,7 +42,7 @@ enable_language(ASM)
 endif (ANDROID)
 
 # build JUCE
-#add_subdirectory("../external/JUCE" ./JUCE)
+#add_subdirectory("../external/Eq/JUCE" ./JUCE)
 
 # build App code (e.g. libExamplePlugin_Standalone.so)
 
