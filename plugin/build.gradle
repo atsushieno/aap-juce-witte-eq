@@ -30,6 +30,10 @@ android {
         implementation "androidx.startup:startup-runtime:1.0.0"
         implementation "org.androidaudioplugin:androidaudioplugin:0.6.3"
     }
+    
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
