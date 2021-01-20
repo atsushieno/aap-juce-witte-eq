@@ -1,7 +1,8 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
+
 
 android {
     compileSdkVersion 30
@@ -12,26 +13,31 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.androidaudioplugin.samples.witte_eq"
         minSdkVersion    29
         targetSdkVersion 30
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti"
+            }
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += ["../external/Eq/JUCE/modules/juce_gui_basics/native/javaopt/app"]
     }
 
     dependencies {
         implementation "androidx.startup:startup-runtime:1.0.0"
-        implementation project(':plugin')
-    }
-
-    lintOptions {
-        abortOnError false
+        implementation "org.androidaudioplugin:androidaudioplugin:0.6.3"
     }
 }
+
 dependencies {
     implementation "androidx.core:core-ktx:1.3.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     mavenCentral()
 }
-
