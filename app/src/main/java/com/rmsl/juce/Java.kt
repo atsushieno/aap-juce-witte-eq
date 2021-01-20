@@ -8,7 +8,7 @@ class Java
 {
     companion object {
         init {
-            System.loadLibrary("juce_jni")
+            System.loadLibrary("Eq_Standalone")
         }
         
         @JvmStatic

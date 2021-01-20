@@ -51,15 +51,6 @@ add_subdirectory("../external/Eq" ./Eq)
 
 if (ANDROID)
 
-add_library(juce_jni
-    SHARED
-    dummy.cpp
-    )
-
-target_link_libraries(juce_jni
-    Eq
-)
-
 target_compile_options(Eq PRIVATE "-fsigned-char" )
 
 endif (ANDROID)
