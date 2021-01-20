@@ -46,7 +46,7 @@ jobs:
     - name: build
       run: ./gradlew build
     - name: dist
-      run: mkdir -p release-builds && cp ./app/build/outputs/apk/release_/release/*.apk release-builds/
+      run: mkdir -p release-builds && cp ./app/build/outputs/apk/release/*.apk release-builds/
     - name: upload-artifact
       uses: actions/upload-artifact@v1
       with:
