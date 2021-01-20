@@ -56,8 +56,16 @@ add_library(juce_jni
     dummy.cpp
     )
 
+# This should not be required, but `{target_name}_Standalone.so is not added to library path by CMake
+# or AGP CMake integration on GitHub Actions. This is a nasty workaround.
+target_link_directories(juce_jni PRIVATE
+        ${CMAKE_CURRENT_BINARY_DIR}/Eq/Eq_artefacts/
+        )
+
+# libjuce_jni is not really required, but without this GitHub Actions build does not bring in
+# ${target_name}_Standaline.so into the apk.
 target_link_libraries(juce_jni
-    ${target_name}
+    ${target_name} ${target_name}_Standalone
 )
 
 target_compile_options(Eq PRIVATE "-fsigned-char" )
