@@ -19,7 +19,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_STL=c++_static", "-DANDROID_CPP_FEATURES=exceptions rtti"
-                targets "Eq_Standalone"
+                targets "Eq_All"
             }
         }
     }
