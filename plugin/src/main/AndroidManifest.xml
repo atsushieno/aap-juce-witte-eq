@@ -1,4 +1,4 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.androidaudioplugin.samples.witte_eq">
+    package="org.androidaudioplugin.samples.witte_eq_plugin">
 </manifest>
