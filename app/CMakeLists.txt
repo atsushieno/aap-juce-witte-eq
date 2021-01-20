@@ -57,7 +57,7 @@ add_library(juce_jni
     )
 
 target_link_libraries(juce_jni
-    Eq_Standalone
+    Eq Eq_Standalone
 )
 
 target_compile_options(Eq PRIVATE "-fsigned-char" )
