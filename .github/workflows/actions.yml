@@ -44,7 +44,7 @@ jobs:
     - name: build and install AAP core locally.
       run: cd external/android-audio-plugin-framework/java && ./gradlew publishToMavenLocal
     - name: build
-      run: ./gradlew build
+      run: make
     - name: dist
       run: mkdir -p release-builds && cp ./app/build/outputs/apk/release/*.apk release-builds/
     - name: upload-artifact
