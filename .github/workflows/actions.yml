@@ -41,10 +41,8 @@ jobs:
       run: sudo mkdir -p /usr/local/lib/android/sdk/ndk && sudo chmod 777 /usr/local/lib/android/sdk/ndk
     - name: workaround for https://github.com/actions/virtual-environments/issues/2228
       run: echo "yes" | $ANDROID_HOME/tools/bin/sdkmanager "cmake;3.18.1" --channel=3
-    - name: build and install AAP core locally.
-      run: cd external/android-audio-plugin-framework/java && ./gradlew publishToMavenLocal
     - name: build
-      run: ./gradlew build
+      run: make
     - name: dist
       run: mkdir -p release-builds && cp ./app/build/outputs/apk/release/*.apk release-builds/
     - name: upload-artifact
