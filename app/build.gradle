@@ -17,6 +17,25 @@ android {
         targetSdkVersion 30
     }
 
+    buildTypes {
+        debug {
+            externalNativeBuild {
+                cmake {
+                    arguments "-DJUCEAAP_BUILD_TYPE=debug"
+                }
+            }
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            externalNativeBuild {
+                cmake {
+                    arguments "-DJUCEAAP_BUILD_TYPE=release"
+                }
+            }
+        }
+    }
+
     dependencies {
         implementation "androidx.startup:startup-runtime:1.0.0"
         implementation project(':plugin')
