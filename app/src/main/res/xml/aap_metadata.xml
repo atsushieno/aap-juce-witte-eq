@@ -36,6 +36,8 @@
       <port name="5 Gain" direction="input" default="0.0" maximum="1.0" content="other"/>
       <port name="5 Q" direction="input" default="0.7" minimum="0.1" maximum="10.0" content="other"/>
 
+      <port name="OutGain" direction="input" default="1.0" minimum="0.0" maximum="10.0" content="other"/>
+
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>
       <port direction="input" content="audio" name="Left"/>
