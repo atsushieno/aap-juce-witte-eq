@@ -4,7 +4,7 @@
 <plugins>
   <plugin name="Witte Eq" category="Effect" author="witte"
           manufacturer="https://github.com/witte/Eq" unique-id="juceaap:2b80db16"
-          library="libjuce_jni.so" entrypoint="GetJuceAAPFactory" assets="">
+          library="libEq_Standalone.so" entrypoint="GetJuceAAPFactoryStandalone" assets="">
     <ports>
       <port name="1 On" direction="input" default="0.0" maximum="1.0" content="other"/>
       <port name="1 Type" direction="input" default="0.0" maximum="6.0" content="other"/>
