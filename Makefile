@@ -1,9 +1,11 @@
 
+PWD=$(shell pwd)
+AAP_JUCE_DIR=$(PWD)/external/aap-juce
+
 APP_NAME=Eq
 
-APP_SRC_DIR=$(shell pwd)/external/Eq
-
-AAP_JUCE_DIR=$(shell pwd)/external/aap-juce
+APP_BUILD_DIR=$(PWD)
+APP_SRC_DIR=$(PWD)/external/Eq
 JUCE_DIR=$(APP_SRC_DIR)/JUCE
 
 # For metadata updates, relative to build-desktop
