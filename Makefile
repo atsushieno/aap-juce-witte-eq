@@ -1,4 +1,9 @@
 
+APP_NAME=Eq
+APP_SRC_DIR=external/Eq
+AAP_JUCE_DIR=$(shell pwd)/external/aap-juce
+
+
 build: patch-juce patch-eq
 	cd external/android-audio-plugin-framework/java && ./gradlew publishToMavenLocal
 	./gradlew build
@@ -19,3 +24,4 @@ patch-eq: .stamp-eq
 	cd external/Eq && patch -i ../../witte-eq-aap.patch -p1
 	touch .stamp-eq
 
+include $(AAP_JUCE_DIR)/Makefile.common
