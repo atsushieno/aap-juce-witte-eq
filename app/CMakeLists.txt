@@ -31,7 +31,9 @@ add_definitions(
 set(JUCE_USE_ANDROID_OBOE 0)
 set(OBOE_DIR "../external/Eq/JUCE/modules/juce_audio_devices/native/oboe")
 #add_subdirectory (${OBOE_DIR} ./oboe)
+if ('${AAP_DIR}' EQUAL '')
 set(AAP_DIR "${CMAKE_CURRENT_LIST_DIR}/../external/android-audio-plugin-framework")
+endif ()
 
 # libcpufeatures
 
