@@ -1,27 +1,14 @@
 
 APP_NAME=Eq
+
 APP_SRC_DIR=external/Eq
+
 AAP_JUCE_DIR=$(shell pwd)/external/aap-juce
 
+# For metadata updates, relative to build-desktop
+APP_SHARED_CODE_LIBS="$(APP_NAME)_artefacts/lib$(APP_NAME)_SharedCode.a lib$(APP_NAME)Data.a"
 
-build: patch-juce patch-eq
-	cd external/android-audio-plugin-framework/java && ./gradlew publishToMavenLocal
-	./gradlew build
-	mkdir -p release-builds
-	cp ./app/build/outputs/apk/release/app-release-unsigned.apk release-builds/witte-eq-release-unsigned.apk
+PATCH_FILE=$(shell pwd)/aap-juce-support.patch
+PATCH_DEPTH=1
 
-
-patch-juce: .stamp-juce
-
-.stamp-juce:
-	cd external/Eq/JUCE && patch -i ../../aap-juce/JUCE-support-Android-CMake.patch -p1
-	touch .stamp-juce
-
-
-patch-eq: .stamp-eq
-
-.stamp-eq:
-	cd external/Eq && patch -i ../../witte-eq-aap.patch -p1
-	touch .stamp-eq
-
-include $(AAP_JUCE_DIR)/Makefile.common
+include $(AAP_JUCE_DIR)/Makefile.cmake-common
