@@ -1,7 +1,7 @@
 
 APP_NAME=Eq
 
-APP_SRC_DIR=external/Eq
+APP_SRC_DIR=$(shell pwd)/external/Eq
 
 AAP_JUCE_DIR=$(shell pwd)/external/aap-juce
 JUCE_DIR=$(APP_SRC_DIR)/JUCE
