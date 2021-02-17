@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b361ca3..d160b30 100644
+index b361ca3..6631bbe 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -19,7 +19,7 @@ juce_add_plugin(${PLUGIN_NAME}
@@ -7,7 +7,7 @@ index b361ca3..d160b30 100644
      PLUGIN_MANUFACTURER_CODE Witt
      PLUGIN_CODE Eq00
 -    FORMATS AU VST3
-+    FORMATS AU VST3 Standalone
++    FORMATS AU Standalone
      PRODUCT_NAME "Eq")
  
  target_sources(${PLUGIN_NAME} PRIVATE
@@ -16,6 +16,13 @@ index b361ca3..d160b30 100644
  set_target_properties(${PLUGIN_NAME} ${PLUGIN_DATA} PROPERTIES POSITION_INDEPENDENT_CODE ON)
  
 +# begin Android specifics -->
++# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
++include_directories(
++        "${AAP_DIR}/native/androidaudioplugin/core/include"
++        "${AAP_DIR}/native/plugin-api/include"
++        )
++juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
++
 +if (ANDROID)
 +
 +# dependencies
@@ -30,13 +37,6 @@ index b361ca3..d160b30 100644
 +        "${ANDROID_NDK}/sources/android/cpufeatures"
 +        "${OBOE_DIR}/include"
 +        )
-+
-+# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
-+include_directories(
-+        "${AAP_DIR}/native/androidaudioplugin/core/include"
-+        "${AAP_DIR}/native/plugin-api/include"
-+        )
-+juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
 +
 +endif (ANDROID)
 +# <-- end Android specifics

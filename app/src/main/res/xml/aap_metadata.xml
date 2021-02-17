@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugins>
+<plugins xmlns="urn:org.androidaudioplugin.core" xmlns:pp="urn:org.androidaudioplugin.port">
   <plugin name="Eq" category="Effect" author="witte" manufacturer="" unique-id="juceaap:45713030"
           library="libEq_Standalone.so" entrypoint="GetJuceAAPFactoryStandalone"
           assets="">
     <ports>
-      <port name="1 On" direction="input" default="0.0" maximum="1.0" content="other"/>
-      <port name="1 Type" direction="input" default="0.0" maximum="4.0" content="other"/>
-      <port name="1 Freq" direction="input" default="0.0" minimum="20.0"
-            maximum="20000.0" content="other"/>
-      <port name="1 Gain" direction="input" minimum="-24.0" maximum="24.0"
+      <port name="1 On" direction="input" pp:default="0.0" pp:maximum="1.0"
             content="other"/>
-      <port name="1 Q" direction="input" minimum="0.1000000014901161" maximum="10.0"
+      <port name="1 Type" direction="input" pp:default="0.0" pp:maximum="4.0"
             content="other"/>
-      <port name="2 On" direction="input" maximum="1.0" content="other"/>
-      <port name="2 Type" direction="input" maximum="4.0" content="other"/>
-      <port name="2 Freq" direction="input" minimum="20.0" maximum="20000.0"
+      <port name="1 Freq" direction="input" pp:default="0.0" pp:minimum="20.0"
+            pp:maximum="20000.0" content="other"/>
+      <port name="1 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
-      <port name="2 Gain" direction="input" minimum="-24.0" maximum="24.0"
+      <port name="1 Q" direction="input" pp:minimum="0.1000000014901161"
+            pp:maximum="10.0" content="other"/>
+      <port name="2 On" direction="input" pp:maximum="1.0" content="other"/>
+      <port name="2 Type" direction="input" pp:maximum="4.0" content="other"/>
+      <port name="2 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
             content="other"/>
-      <port name="2 Q" direction="input" minimum="0.1000000014901161" maximum="10.0"
+      <port name="2 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
-      <port name="3 On" direction="input" maximum="1.0" content="other"/>
-      <port name="3 Type" direction="input" maximum="4.0" content="other"/>
-      <port name="3 Freq" direction="input" minimum="20.0" maximum="20000.0"
+      <port name="2 Q" direction="input" pp:minimum="0.1000000014901161"
+            pp:maximum="10.0" content="other"/>
+      <port name="3 On" direction="input" pp:maximum="1.0" content="other"/>
+      <port name="3 Type" direction="input" pp:maximum="4.0" content="other"/>
+      <port name="3 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
             content="other"/>
-      <port name="3 Gain" direction="input" minimum="-24.0" maximum="24.0"
+      <port name="3 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
-      <port name="3 Q" direction="input" minimum="0.1000000014901161" maximum="10.0"
+      <port name="3 Q" direction="input" pp:minimum="0.1000000014901161"
+            pp:maximum="10.0" content="other"/>
+      <port name="4 On" direction="input" pp:maximum="1.0" content="other"/>
+      <port name="4 Type" direction="input" pp:maximum="4.0" content="other"/>
+      <port name="4 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
             content="other"/>
-      <port name="4 On" direction="input" maximum="1.0" content="other"/>
-      <port name="4 Type" direction="input" maximum="4.0" content="other"/>
-      <port name="4 Freq" direction="input" minimum="20.0" maximum="20000.0"
+      <port name="4 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
-      <port name="4 Gain" direction="input" minimum="-24.0" maximum="24.0"
+      <port name="4 Q" direction="input" pp:minimum="0.1000000014901161"
+            pp:maximum="10.0" content="other"/>
+      <port name="5 On" direction="input" pp:default="0.0" pp:maximum="1.0"
             content="other"/>
-      <port name="4 Q" direction="input" minimum="0.1000000014901161" maximum="10.0"
+      <port name="5 Type" direction="input" pp:maximum="4.0" content="other"/>
+      <port name="5 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
             content="other"/>
-      <port name="5 On" direction="input" default="0.0" maximum="1.0" content="other"/>
-      <port name="5 Type" direction="input" maximum="4.0" content="other"/>
-      <port name="5 Freq" direction="input" minimum="20.0" maximum="20000.0"
+      <port name="5 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
-      <port name="5 Gain" direction="input" minimum="-24.0" maximum="24.0"
-            content="other"/>
-      <port name="5 Q" direction="input" minimum="0.1000000014901161" maximum="10.0"
-            content="other"/>
-      <port name="Output Gain" direction="input" minimum="-24.0" maximum="24.0"
+      <port name="5 Q" direction="input" pp:minimum="0.1000000014901161"
+            pp:maximum="10.0" content="other"/>
+      <port name="Output Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
             content="other"/>
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>

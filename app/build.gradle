@@ -32,7 +32,7 @@ android {
 
     dependencies {
         implementation "androidx.startup:startup-runtime:1.0.0"
-        implementation "org.androidaudioplugin:androidaudioplugin:0.6.3"
+        implementation "org.androidaudioplugin:androidaudioplugin:0.6.6"
     }
 
     lintOptions {
