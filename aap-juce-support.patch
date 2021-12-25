@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b361ca3..6631bbe 100644
+index facc4d7..971ad10 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -19,7 +19,7 @@ juce_add_plugin(${PLUGIN_NAME}
@@ -11,9 +11,16 @@ index b361ca3..6631bbe 100644
      PRODUCT_NAME "Eq")
  
  target_sources(${PLUGIN_NAME} PRIVATE
-@@ -48,10 +48,44 @@ juce_add_binary_data(${PLUGIN_DATA} SOURCES
- 
+@@ -49,16 +49,49 @@ juce_add_binary_data(${PLUGIN_DATA} SOURCES
  set_target_properties(${PLUGIN_NAME} ${PLUGIN_DATA} PROPERTIES POSITION_INDEPENDENT_CODE ON)
+ 
+ if (UNIX)
+-    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall -Wextra -pedantic -Werror)
++    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall -Wextra)
+ else()
+     add_definitions("/wd4244") # disable "possible loss of data" warning/error
+-    target_compile_options(${PLUGIN_NAME} PUBLIC /W4 /WX)
+ endif()
  
 +# begin Android specifics -->
 +# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
@@ -58,8 +65,9 @@ index b361ca3..6631bbe 100644
 +        #${oboe_lib}
 +        )
 diff --git a/JUCE b/JUCE
+index 6d6ecff..4855f52 160000
 --- a/JUCE
 +++ b/JUCE
 @@ -1 +1 @@
--Subproject commit 4855f52e4d407dc323a61b054c4c0eadbc836157
+-Subproject commit 6d6ecffb9dbdc2828b20a1c12373eed63696bdff
 +Subproject commit 4855f52e4d407dc323a61b054c4c0eadbc836157-dirty
