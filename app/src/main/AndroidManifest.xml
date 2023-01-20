@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:versionCode="1" android:versionName="1.0.0"
-    package="org.androidaudioplugin.samples.witte_eq">
+    package="org.androidaudioplugin.ports.juce.witte_eq">
 
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true" android:xlargeScreens="true"/>
 
@@ -14,7 +14,7 @@
 
   <application android:label="@string/app_name" android:hardwareAccelerated="false">
     <activity android:name="com.rmsl.juce.JuceActivity" android:label="@string/app_name" android:configChanges="keyboardHidden|orientation|screenSize"
-              android:screenOrientation="userLandscape" android:hardwareAccelerated="true" android:exported="true">
+              android:screenOrientation="userLandscape" android:launchMode="singleTask" android:hardwareAccelerated="true" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
@@ -22,18 +22,20 @@
     </activity>
     <service
         android:name="org.androidaudioplugin.AudioPluginService"
-        android:label="@string/app_name" android:exported="true">
+        android:label="@string/app_name"
+        android:exported="true">
       <intent-filter>
-        <action android:name="org.androidaudioplugin.AudioPluginService"/>
+        <action android:name="org.androidaudioplugin.AudioPluginService.V2"/>
       </intent-filter>
       <meta-data
-          android:name="org.androidaudioplugin.AudioPluginService#Plugins"
+          android:name="org.androidaudioplugin.AudioPluginService.V2#Plugins"
           android:resource="@xml/aap_metadata"/>
     </service>
 
     <provider android:name="androidx.startup.InitializationProvider"
         android:authorities="${applicationId}.androidx-startup"
         android:exported="false"
+        tools:replace="android:authorities"
         tools:node="merge">
         <meta-data android:name="dev.atsushieno.juce.JuceAppInitializer" android:value="androidx.startup" />
     </provider>

@@ -1,32 +1,16 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index facc4d7..971ad10 100644
+index a484c2c..160cb98 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -19,7 +19,7 @@ juce_add_plugin(${PLUGIN_NAME}
-     COPY_PLUGIN_AFTER_BUILD TRUE
-     PLUGIN_MANUFACTURER_CODE Witt
-     PLUGIN_CODE Eq00
--    FORMATS AU VST3
-+    FORMATS AU Standalone
-     PRODUCT_NAME "Eq")
+@@ -13,6 +13,34 @@ project(${PLUGIN_NAME} VERSION 1.0.0)
  
- target_sources(${PLUGIN_NAME} PRIVATE
-@@ -49,16 +49,49 @@ juce_add_binary_data(${PLUGIN_DATA} SOURCES
- set_target_properties(${PLUGIN_NAME} ${PLUGIN_DATA} PROPERTIES POSITION_INDEPENDENT_CODE ON)
- 
- if (UNIX)
--    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall -Wextra -pedantic -Werror)
-+    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall -Wextra)
- else()
-     add_definitions("/wd4244") # disable "possible loss of data" warning/error
--    target_compile_options(${PLUGIN_NAME} PUBLIC /W4 /WX)
- endif()
+ add_subdirectory(JUCE)
  
 +# begin Android specifics -->
 +# It is not beautiful, but there does not seem to be any way to add custom include directory for modules.
 +include_directories(
-+        "${AAP_DIR}/native/androidaudioplugin/core/include"
-+        "${AAP_DIR}/native/plugin-api/include"
++        "${AAP_DIR}/include"
++        "${JUCE_DIR}/modules"
 +        )
 +juce_add_module(${AAP_JUCE_DIR}/modules/juceaap_audio_plugin_client)
 +
@@ -40,17 +24,38 @@ index facc4d7..971ad10 100644
 +set(cpufeatures_lib "cpufeatures")
 +set(oboe_lib "oboe")
 +
-+target_include_directories(${PLUGIN_NAME} PRIVATE
-+        "${ANDROID_NDK}/sources/android/cpufeatures"
++add_library("cpufeatures" STATIC "${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c")
++
++
++include_directories(#${PLUGIN_NAME} PRIVATE
 +        "${OBOE_DIR}/include"
 +        )
 +
 +endif (ANDROID)
 +# <-- end Android specifics
 +
- target_link_libraries(${PLUGIN_NAME} PRIVATE
-     ${PLUGIN_DATA}
-     juce::juce_audio_processors
+ juce_add_plugin(${PLUGIN_NAME}
+     COMPANY_NAME "witte"
+     IS_SYNTH FALSE
+@@ -23,7 +51,7 @@ juce_add_plugin(${PLUGIN_NAME}
+     COPY_PLUGIN_AFTER_BUILD FALSE
+     PLUGIN_MANUFACTURER_CODE Witt
+     PLUGIN_CODE Eq00
+-    FORMATS AU VST3
++    FORMATS AU Standalone
+     PRODUCT_NAME "Eq")
+ 
+ target_sources(${PLUGIN_NAME} PRIVATE
+@@ -54,7 +82,7 @@ juce_add_binary_data(${PLUGIN_DATA} SOURCES
+ set_target_properties(${PLUGIN_NAME} ${PLUGIN_DATA} PROPERTIES POSITION_INDEPENDENT_CODE ON)
+ 
+ if (UNIX)
+-    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall -Wextra -pedantic -Werror)
++    target_compile_options(${PLUGIN_NAME} PUBLIC -Wall)
+ else()
+     add_definitions("/wd4244") # disable "possible loss of data" warning/error
+     target_compile_options(${PLUGIN_NAME} PUBLIC /W4 /WX)
+@@ -66,4 +94,12 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE
      juce::juce_audio_utils
      juce::juce_audio_devices
      juce::juce_gui_basics
@@ -65,9 +70,8 @@ index facc4d7..971ad10 100644
 +        #${oboe_lib}
 +        )
 diff --git a/JUCE b/JUCE
-index 6d6ecff..4855f52 160000
 --- a/JUCE
 +++ b/JUCE
 @@ -1 +1 @@
--Subproject commit 6d6ecffb9dbdc2828b20a1c12373eed63696bdff
-+Subproject commit 4855f52e4d407dc323a61b054c4c0eadbc836157-dirty
+-Subproject commit 1fc0de32c8154a86030071b61e7a659713ddc099
++Subproject commit 1fc0de32c8154a86030071b61e7a659713ddc099-dirty

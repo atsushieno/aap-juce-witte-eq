@@ -1,59 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugins xmlns="urn:org.androidaudioplugin.core" xmlns:pp="urn:org.androidaudioplugin.port">
-  <plugin name="Eq" category="Effect" author="witte" manufacturer="" unique-id="juceaap:45713030"
+<plugins xmlns="urn:org.androidaudioplugin.core">
+  <plugin name="AAP witte_Eq" category="Effect" author="witte" manufacturer="" unique-id="juceaap:45713030"
           library="libEq_Standalone.so" entrypoint="GetJuceAAPFactoryStandalone"
           assets="">
+    <extensions>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v1"/>
+    </extensions>
+    <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
+      <parameter id="0" name="1 On" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="1" name="1 Type" direction="input" default="0.0" minimum="0.0"
+                 maximum="4.0" content="other"/>
+      <parameter id="2" name="1 Freq" direction="input" default="0.0" minimum="20.0"
+                 maximum="20000.0" content="other"/>
+      <parameter id="3" name="1 Gain" direction="input" minimum="-24.0" maximum="24.0"
+                 default="0.5104166865348816" content="other"/>
+      <parameter id="4" name="1 Q" direction="input" minimum="0.1000000014901161"
+                 maximum="10.0" default="0.0" content="other"/>
+      <parameter id="5" name="2 On" direction="input" minimum="0.0" maximum="1.0"
+                 default="1.0" content="other"/>
+      <parameter id="6" name="2 Type" direction="input" minimum="0.0" maximum="4.0"
+                 default="0.0625" content="other"/>
+      <parameter id="7" name="2 Freq" direction="input" minimum="20.0" maximum="20000.0"
+                 default="0.0" content="other"/>
+      <parameter id="8" name="2 Gain" direction="input" minimum="-24.0" maximum="24.0"
+                 default="0.5104166865348816" content="other"/>
+      <parameter id="9" name="2 Q" direction="input" minimum="0.1000000014901161"
+                 maximum="10.0" default="0.0" content="other"/>
+      <parameter id="10" name="3 On" direction="input" minimum="0.0" maximum="1.0"
+                 default="1.0" content="other"/>
+      <parameter id="11" name="3 Type" direction="input" minimum="0.0" maximum="4.0"
+                 default="0.125" content="other"/>
+      <parameter id="12" name="3 Freq" direction="input" minimum="20.0" maximum="20000.0"
+                 default="0.0" content="other"/>
+      <parameter id="13" name="3 Gain" direction="input" minimum="-24.0" maximum="24.0"
+                 default="0.5104166865348816" content="other"/>
+      <parameter id="14" name="3 Q" direction="input" minimum="0.1000000014901161"
+                 maximum="10.0" default="0.0" content="other"/>
+      <parameter id="15" name="4 On" direction="input" minimum="0.0" maximum="1.0"
+                 default="1.0" content="other"/>
+      <parameter id="16" name="4 Type" direction="input" minimum="0.0" maximum="4.0"
+                 default="0.1875" content="other"/>
+      <parameter id="17" name="4 Freq" direction="input" minimum="20.0" maximum="20000.0"
+                 default="0.0" content="other"/>
+      <parameter id="18" name="4 Gain" direction="input" minimum="-24.0" maximum="24.0"
+                 default="0.5104166865348816" content="other"/>
+      <parameter id="19" name="4 Q" direction="input" minimum="0.1000000014901161"
+                 maximum="10.0" default="0.0" content="other"/>
+      <parameter id="20" name="5 On" direction="input" default="0.0" minimum="0.0"
+                 maximum="1.0" content="other"/>
+      <parameter id="21" name="5 Type" direction="input" minimum="0.0" maximum="4.0"
+                 default="0.25" content="other"/>
+      <parameter id="22" name="5 Freq" direction="input" minimum="20.0" maximum="20000.0"
+                 default="0.0" content="other"/>
+      <parameter id="23" name="5 Gain" direction="input" minimum="-24.0" maximum="24.0"
+                 default="0.5104166865348816" content="other"/>
+      <parameter id="24" name="5 Q" direction="input" minimum="0.1000000014901161"
+                 maximum="10.0" default="0.0" content="other"/>
+      <parameter id="25" name="Output Gain" direction="input" minimum="-24.0"
+                 maximum="24.0" default="0.5104166865348816" content="other"/>
+    </parameters>
     <ports>
-      <port name="1 On" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="1 Type" direction="input" pp:default="0.0" pp:maximum="4.0"
-            content="other"/>
-      <port name="1 Freq" direction="input" pp:default="0.0" pp:minimum="20.0"
-            pp:maximum="20000.0" content="other"/>
-      <port name="1 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
-      <port name="1 Q" direction="input" pp:minimum="0.1000000014901161"
-            pp:maximum="10.0" content="other"/>
-      <port name="2 On" direction="input" pp:maximum="1.0" content="other"/>
-      <port name="2 Type" direction="input" pp:maximum="4.0" content="other"/>
-      <port name="2 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
-            content="other"/>
-      <port name="2 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
-      <port name="2 Q" direction="input" pp:minimum="0.1000000014901161"
-            pp:maximum="10.0" content="other"/>
-      <port name="3 On" direction="input" pp:maximum="1.0" content="other"/>
-      <port name="3 Type" direction="input" pp:maximum="4.0" content="other"/>
-      <port name="3 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
-            content="other"/>
-      <port name="3 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
-      <port name="3 Q" direction="input" pp:minimum="0.1000000014901161"
-            pp:maximum="10.0" content="other"/>
-      <port name="4 On" direction="input" pp:maximum="1.0" content="other"/>
-      <port name="4 Type" direction="input" pp:maximum="4.0" content="other"/>
-      <port name="4 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
-            content="other"/>
-      <port name="4 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
-      <port name="4 Q" direction="input" pp:minimum="0.1000000014901161"
-            pp:maximum="10.0" content="other"/>
-      <port name="5 On" direction="input" pp:default="0.0" pp:maximum="1.0"
-            content="other"/>
-      <port name="5 Type" direction="input" pp:maximum="4.0" content="other"/>
-      <port name="5 Freq" direction="input" pp:minimum="20.0" pp:maximum="20000.0"
-            content="other"/>
-      <port name="5 Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
-      <port name="5 Q" direction="input" pp:minimum="0.1000000014901161"
-            pp:maximum="10.0" content="other"/>
-      <port name="Output Gain" direction="input" pp:minimum="-24.0" pp:maximum="24.0"
-            content="other"/>
       <port direction="output" content="audio" name="Left"/>
       <port direction="output" content="audio" name="Right"/>
       <port direction="input" content="audio" name="Left"/>
       <port direction="input" content="audio" name="Right"/>
+      <port direction="input" content="midi2" name="MIDI input"/>
     </ports>
   </plugin>
 </plugins>
