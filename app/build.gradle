@@ -27,12 +27,11 @@ android {
     }
 
     dependencies {
-        implementation "androidx.core:core-ktx:1.9.0"
-        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        implementation "androidx.startup:startup-runtime:1.1.1"
-        implementation "dev.atsushieno:libcxx-provider:$ndk_version"
-        implementation "org.androidaudioplugin:androidaudioplugin:$aap_version"
-        implementation "org.androidaudioplugin:androidaudioplugin-midi-device-service:$aap_version"
+        implementation libs.androidx.core.ktx
+        implementation libs.startup.runtime
+        // FIXME: this should not be required, should be another reason that blocks it from loading.
+        implementation libs.libcxx.provider
+        implementation libs.aap.core
     }
 
     externalNativeBuild {

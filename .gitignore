@@ -3,7 +3,7 @@ local.properties
 .cxx
 build
 .gradle
-release-builds
+dist
 
 .stamp-juce
 .stamp-eq
