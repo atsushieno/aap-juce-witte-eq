@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugins xmlns="urn:org.androidaudioplugin.core">
-  <plugin name="AAP witte_Eq" category="Effect" author="witte" manufacturer="" unique-id="juceaap:45713030"
-          library="libEq_Standalone.so" entrypoint="GetJuceAAPFactoryStandalone"
-          assets="">
+  <plugin name="Eq" category="Effect" author="witte" developer="witte"
+          unique-id="juceaap:45713030" library="libEq_Standalone.so" entrypoint="GetJuceAAPFactoryStandalone">
     <extensions>
-      <extension uri="urn://androidaudioplugin.org/extensions/presets/v1"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/plugin-info/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/presets/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/state/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/midi2/v2"/>
+      <extension uri="urn://androidaudioplugin.org/extensions/gui/v2"/>
     </extensions>
     <parameters xmlns="urn://androidaudioplugin.org/extensions/parameters">
-      <parameter id="0" name="1 On" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
-      <parameter id="1" name="1 Type" direction="input" default="0.0" minimum="0.0"
-                 maximum="4.0" content="other"/>
-      <parameter id="2" name="1 Freq" direction="input" default="0.0" minimum="20.0"
-                 maximum="20000.0" content="other"/>
+      <parameter id="0" name="1 On" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
+      <parameter id="1" name="1 Type" direction="input" minimum="0.0" maximum="4.0"
+                 default="0.0" content="other"/>
+      <parameter id="2" name="1 Freq" direction="input" minimum="20.0" maximum="20000.0"
+                 default="0.0" content="other"/>
       <parameter id="3" name="1 Gain" direction="input" minimum="-24.0" maximum="24.0"
                  default="0.5104166865348816" content="other"/>
       <parameter id="4" name="1 Q" direction="input" minimum="0.1000000014901161"
@@ -48,8 +51,8 @@
                  default="0.5104166865348816" content="other"/>
       <parameter id="19" name="4 Q" direction="input" minimum="0.1000000014901161"
                  maximum="10.0" default="0.0" content="other"/>
-      <parameter id="20" name="5 On" direction="input" default="0.0" minimum="0.0"
-                 maximum="1.0" content="other"/>
+      <parameter id="20" name="5 On" direction="input" minimum="0.0" maximum="1.0"
+                 default="0.0" content="other"/>
       <parameter id="21" name="5 Type" direction="input" minimum="0.0" maximum="4.0"
                  default="0.25" content="other"/>
       <parameter id="22" name="5 Freq" direction="input" minimum="20.0" maximum="20000.0"

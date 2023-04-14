@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a484c2c..680fb7c 100644
+index a484c2c..5a72e38 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -13,6 +13,35 @@ project(${PLUGIN_NAME} VERSION 1.0.0)
@@ -11,7 +11,7 @@ index a484c2c..680fb7c 100644
 +include_directories(
 +        "${AAP_DIR}/include"
 +        )
-+juce_add_module(${AAP_JUCE_DIR}/aap-modules/juceaap_audio_plugin_client)
++juce_add_module(${AAP_JUCE_DIR}/aap-modules/aap_audio_processors)
 +
 +if (ANDROID)
 +
@@ -62,7 +62,7 @@ index a484c2c..680fb7c 100644
      juce::juce_gui_basics
 -    juce::juce_dsp)
 +    juce::juce_dsp
-+    juceaap_audio_plugin_client
++        aap_audio_processors
 +        ${log}
 +        ${android}
 +        ${glesv2}
