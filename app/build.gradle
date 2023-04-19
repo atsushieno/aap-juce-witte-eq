@@ -32,6 +32,7 @@ android {
         // FIXME: this should not be required, should be another reason that blocks it from loading.
         implementation libs.libcxx.provider
         implementation libs.aap.core
+        implementation libs.aap.ui.web
     }
 
     externalNativeBuild {
@@ -45,6 +46,6 @@ android {
         prefab true
     }
 
-    ndkVersion "$ndk_version"
+    ndkVersion libs.versions.ndk.get()
 }
 
